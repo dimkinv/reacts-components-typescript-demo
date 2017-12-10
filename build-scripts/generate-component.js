@@ -72,5 +72,6 @@ function upperFirst(name){
 }
 
 function camelToDash(name){
-    return name.replace(/([A-Z])/g, (g) => `-${g[0].toLowerCase()}`);
+    let res = name[0].toLowerCase() + name.slice(1,name.length);
+    return res.replace(/([A-Z])/g, (g) => `-${g[0].toLowerCase()}`);
 }
