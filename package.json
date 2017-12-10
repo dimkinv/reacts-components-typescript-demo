@@ -10,7 +10,7 @@
     "clean:dist": "rimraf ./dist",
     "generate-entries": "npm run clean:entries && node build-scripts/generate-components-entries",
     "copy": "node build-scripts/copy ./ ./dist \".npmignore\" \".package.json\"",
-    "build": "npm run clean:dist && npm run generate-entries && tsc && npm run copy",
+    "build": "npm run clean:dist && npm run generate-entries && tsc && npm run bump && npm run copy",
     "bump": "npm version patch"
   },
   "author": "",
