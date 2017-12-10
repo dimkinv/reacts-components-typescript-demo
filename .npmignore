@@ -1,4 +1,6 @@
 node_modules
-lib
+*.ts
+*.tsx
+!*.d.ts
 tsconfig.json
 webpack.config.js

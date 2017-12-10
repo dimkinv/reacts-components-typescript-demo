@@ -4,3 +4,4 @@ dist
 *.jsx
 *.d.ts
 !webpack.config.js
+*.js.map
