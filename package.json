@@ -1,6 +1,6 @@
 {
   "name": "reacts-components-typescript-demo",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "react common components library",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
