@@ -6,3 +6,4 @@ dist
 !webpack.config.js
 *.js.map
 !build-scripts/*
+lib/*.ts
