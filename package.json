@@ -6,6 +6,7 @@
   "types": "lib/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "generate-entries": "node build-scripts/generate-components-entries",
     "copy": "node build-scripts/copy ./ ./dist \".npmignore\" \".package.json\"",
     "build": "npm version patch && tsc"
   },
