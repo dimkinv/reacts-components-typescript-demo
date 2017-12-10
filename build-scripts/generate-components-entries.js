@@ -24,25 +24,26 @@ fs.writeFile('./lib/index.ts', getIndexContent(libsNames), function(err) {
 });
 
 libsNames.forEach(name => {
-    fs.writeFile('./lib/'+upperFirst(name)+'.ts', getContent(name), function(err) {
+    fs.writeFile('./lib/'+dashedToUpperCamel(name)+'.ts', getContent(name), function(err) {
         if(err) {
             return console.log(err);
         }
-        console.log(upperFirst(name) + '.ts : Generated successfully..');
+        console.log(dashedToUpperCamel(name) + '.ts : Generated successfully..');
     }); 
 });
 
-function upperFirst(name){
-    return name[0].toUpperCase() + name.slice(1,name.length);
+function dashedToUpperCamel(name){
+    let res = name.replace(/-([a-z])/g, function (g) { return g[1].toUpperCase(); });
+    return res[0].toUpperCase() + res.slice(1,res.length);
 }
 
 function getIndexContent(libsNames){
-    return libsNames.reduce((content, name) => content += `export { default as ${upperFirst(name)} } from './${name}/${upperFirst(name)}';
+    return libsNames.reduce((content, name) => content += `export { default as ${dashedToUpperCamel(name)} } from './${name}/${dashedToUpperCamel(name)}';
 `, '');
 }
 
 function getContent(name){
-    const upperName = upperFirst(name);
+    const upperName = dashedToUpperCamel(name);
     return `import { ${upperName} } from './index';
 export default ${upperName};`
 }
