@@ -1,11 +1,11 @@
 {
   "name": "reacts-components-typescript-demo",
-  "version": "0.0.10",
+  "version": "0.0.9",
   "description": "react common components library",
-  "main": "components/index.js",
-  "types": "components/index.d.ts",
+  "main": "index.js",
+  "types": "index.d.ts",
   "scripts": {
-    "build": "npm run clean:lib && npm run generate-entries && tsc && npm run bump && npm run copy",
+    "build": "npm run clean:lib && npm run generate-entries && tsc && npm run copy",
     "bump": "npm version patch",
     "clean:entries": "rimraf ./components/*.*",
     "clean:lib": "rimraf ./lib",
