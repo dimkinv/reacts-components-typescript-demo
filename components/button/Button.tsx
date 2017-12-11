@@ -6,9 +6,8 @@ export default class Button extends React.PureComponent<ButtonProps, ButtonState
     constructor(props: ButtonProps){
         super(props);
         this.state = new ButtonState();
-        this.props = {title: 'aa'} as ButtonProps;
     }
     render(){
-        return (<button>DEMO</button>)
+        return (<button>{this.props.title}</button>)
     }
 }

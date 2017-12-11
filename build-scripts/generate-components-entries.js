@@ -1,7 +1,7 @@
 const path = require('path');
 const fs = require('fs');
 
-const targetPath = './lib';
+const targetPath = './components';
 const filenames = fs.readdirSync(targetPath);
 var libsNames = [];
 filenames.forEach(function (name) {
@@ -16,7 +16,7 @@ filenames.forEach(function (name) {
 
 console.log('Generating entry files for the following components: ' + libsNames.join(','));
 
-fs.writeFile('./lib/index.ts', getIndexContent(libsNames), function(err) {
+fs.writeFile('./components/index.ts', getIndexContent(libsNames), function(err) {
     if(err) {
         return console.log(err);
     }
@@ -24,7 +24,7 @@ fs.writeFile('./lib/index.ts', getIndexContent(libsNames), function(err) {
 });
 
 libsNames.forEach(name => {
-    fs.writeFile('./lib/'+dashedToUpperCamel(name)+'.ts', getContent(name), function(err) {
+    fs.writeFile('./components/'+dashedToUpperCamel(name)+'.ts', getContent(name), function(err) {
         if(err) {
             return console.log(err);
         }

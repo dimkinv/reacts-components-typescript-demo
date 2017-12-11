@@ -1,12 +1,17 @@
 const fs = require('fs');
 const componentName = process.argv[2];
 
+if(componentName === undefined) {
+    console.warn('You need to give a name to your component');
+    return;
+}
+
 if(!(/^\w+$/.test(componentName))){
     console.log('Component name cannot contain invalid chars ');
     return;
 }
 const upperName = upperFirst(componentName);
-const pathName = `./lib/${camelToDash(componentName)}`;
+const pathName = `./components/${camelToDash(componentName)}`;
 
 console.log('Generating Component Named: ' + upperName + '...');
 
@@ -14,10 +19,11 @@ if (!fs.existsSync(pathName)){
     fs.mkdirSync(pathName);
 }
 
-[   getComponentContent, 
-    getCSSContect, 
-    getPropsContect, 
-    getStateContect, 
+[   getComponentContent,
+    getCSSContect,
+    getPropsContect,
+    getStateContect,
+    getComponentTest,
 ].forEach(functionRef => {
     const file = functionRef(upperName);
     fs.writeFile(`${pathName}/${file.name}`, file.content, function(err) {
@@ -42,6 +48,24 @@ export default class ${upperName} extends React.Component<${upperName}Props, ${u
     }
 }
 ` 
+    }
+}
+
+function getComponentTest() {
+    return {
+        name: `${upperName}.test.tsx`,
+        content: `import * as React from "react";
+import { render } from "enzyme";
+        
+import ${upperName} from "./${upperName}";
+        
+describe("${upperName}", () => {
+    it("renders correctly ", () => {
+        const instance = render(<${upperName} />);
+        expect(instance).toMatchSnapshot();
+    });
+});
+`
     }
 }
 

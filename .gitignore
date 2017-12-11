@@ -1,9 +1,9 @@
 node_modules
-dist
+lib
 *.js
 *.jsx
 *.d.ts
 !webpack.config.js
 *.js.map
 !build-scripts/*
-lib/*.ts
+components/*.ts
