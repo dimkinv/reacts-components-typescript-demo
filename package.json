@@ -16,7 +16,7 @@
     "copy:css": "node build-scripts/copy ./components ./lib \"**/*.css\" ",
     "generate-component": "node build-scripts/generate-component",
     "generate-entries": "npm run clean:entries && node build-scripts/generate-components-entries",
-    "kushkush": "npm run build && cd lib && npm publish",
+    "full-publish": "npm run build && cd lib && npm publish",
     "test": "jest"
   },
   "author": "",
