@@ -6,12 +6,15 @@
   "types": "index.d.ts",
   "scripts": {
     "build": "npm run clean:lib && npm run generate-entries && tsc && npm run bump && npm run copy",
+    "tsc": "tsc",
+    "tscw": "tsc -w",
     "bump": "npm version patch",
     "clean:entries": "rimraf ./components/*.*",
     "clean:lib": "rimraf ./lib",
     "copy": "node build-scripts/copy",
     "generate-component": "node build-scripts/generate-component",
     "generate-entries": "npm run clean:entries && node build-scripts/generate-components-entries",
+    "prepublishOnly": "npm run build && cd lib",
     "test": "jest"
   },
   "author": "",
