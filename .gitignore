@@ -3,7 +3,7 @@ lib
 *.js
 *.jsx
 *.d.ts
-!webpack.config.js
+!jest.setup.js
 *.js.map
 !build-scripts/*
 components/*.ts
