@@ -5,11 +5,11 @@
   "main": "index.js",
   "types": "index.d.ts",
   "scripts": {
-    "build": "npm run clean:lib && npm run generate-entries && tsc && npm run copy",
+    "build": "npm run clean:lib && npm run generate-entries && tsc && npm run bump && npm run copy",
     "bump": "npm version patch",
     "clean:entries": "rimraf ./components/*.*",
     "clean:lib": "rimraf ./lib",
-    "copy": "node build-scripts/copy ./ ./lib \".npmignore\" \"package.json\"",
+    "copy": "node build-scripts/copy",
     "generate-component": "node build-scripts/generate-component",
     "generate-entries": "npm run clean:entries && node build-scripts/generate-components-entries",
     "test": "jest"
