@@ -1,4 +1,4 @@
 node_modules
 components
 tsconfig.json
-webpack.config.js
+build-scripts
