@@ -5,9 +5,9 @@ import ButtonState from './ButtonState';
 export default class Button extends React.PureComponent<ButtonProps, ButtonState>{
     constructor(props: ButtonProps){
         super(props);
-        this.state = new ButtonState();
+        this.state = {} as ButtonState;
     }
     render(){
-        return (<button>{this.props.title}</button>)
+        return (<button onClick={() => {console.log('clicked')}}>Hey {this.props.title}</button>)
     }
 }

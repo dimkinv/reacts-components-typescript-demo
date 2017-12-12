@@ -1,3 +1,3 @@
-export default class ButtonState{
+export default interface ButtonState{
     
 }

@@ -4,6 +4,7 @@ lib
 *.jsx
 *.d.ts
 !jest.setup.js
+!styleguide.config.js
 *.js.map
 !build-scripts/*
 components/*.ts
