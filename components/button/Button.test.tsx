@@ -8,4 +8,10 @@ describe("Button", () => {
       const button = render(<Button title="My Title" />);
       expect(button).toMatchSnapshot();
     });
+    it("matches different titles", () => {
+      ["title", "another title"].forEach((title) => {
+        const button = render(<Button title={title} />);
+        expect(button).toMatchSnapshot();
+      })
+    })
 });
