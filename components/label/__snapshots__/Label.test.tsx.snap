@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Label renders correctly  1`] = `
-<span>
+<span
+  style="color:red;font-size:24px"
+>
   I'm Label
 </span>
 `;
