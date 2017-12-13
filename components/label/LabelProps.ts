@@ -1,3 +1,4 @@
-export default interface LabelProps{
+export default interface LabelProps {
     text: string;
+    overrideStyles?: { color: string }
 }

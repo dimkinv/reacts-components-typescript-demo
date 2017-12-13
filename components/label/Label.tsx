@@ -1,13 +1,15 @@
 import * as React from 'react';
 import LabelProps from './LabelProps';
 import LabelState from './LabelState';
+import './Label.scss';
 
 export default class Label extends React.Component<LabelProps, LabelState>{
-    render(){
-        const styles = {
-          color: 'red',
-          fontSize: '24px'
-        };
-        return (<span style={styles}>{this.props.text}</span>)
+    constructor(props: LabelProps) {
+        super(props);
+
+        this.state = new LabelState();
+    }
+    render() {
+        return (<span className="my-class">{this.props.text}</span>)
     }
 }
