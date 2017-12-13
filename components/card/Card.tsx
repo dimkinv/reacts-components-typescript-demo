@@ -19,7 +19,7 @@ export default class Card extends React.Component<CardProps, CardState>{
         });
         // Creating the animation
         const animationStyles = () => {
-          const bounce = glamor.css.keyframes('bounce',{
+          const bounce = glamor.keyframes('bounce',{
             '0%': { transform: `scale(1.01)`},
             '100%': { transform: `scale(0.99)`}
           })
