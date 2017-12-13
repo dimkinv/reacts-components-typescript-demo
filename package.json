@@ -1,6 +1,6 @@
 {
   "name": "reacts-components-typescript-demo",
-  "version": "0.0.18",
+  "version": "0.0.29",
   "description": "react common components library",
   "main": "index.js",
   "types": "index.d.ts",
@@ -44,7 +44,10 @@
     "webpack": "^3.10.0"
   },
   "dependencies": {
-    "react": "^16.2.0"
+    "glamor": "^2.20.40",
+    "glamorous": "^4.11.0",
+    "react": "^16.2.0",
+    "styled-components": "^2.2.4"
   },
   "jest": {
     "transform": {
